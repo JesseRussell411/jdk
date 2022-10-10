@@ -539,7 +539,10 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof List))
+
+        if (!(o instanceof List<?> l))
+            return false;
+        if (l.size() != size())
             return false;
 
         ListIterator<E> e1 = listIterator();
