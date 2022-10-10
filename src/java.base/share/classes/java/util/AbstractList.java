@@ -546,7 +546,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
             return false;
 
         ListIterator<E> e1 = listIterator();
-        ListIterator<?> e2 = ((List<?>) o).listIterator();
+        ListIterator<?> e2 = l.listIterator();
         while (e1.hasNext() && e2.hasNext()) {
             E o1 = e1.next();
             Object o2 = e2.next();
