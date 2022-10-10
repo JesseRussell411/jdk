@@ -1728,4 +1728,14 @@ public class ArrayList<E> extends AbstractList<E>
         // assert size >= 0;
         // assert size == elementData.length || elementData[size] == null;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof ArrayList<?> arrList && size() != arrList.size())
+            return false;
+        if (obj instanceof SubList<?> subList && size() != subList.size())
+            return false;
+
+        return super.equals(obj);
+    }
 }
